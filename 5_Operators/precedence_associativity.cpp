@@ -12,9 +12,14 @@ int main() {
   int f{2};
   int g{5};
 
+  bool h{true};
+  bool i{false};
+  bool j{false};
+
   // +, - are LTR associative
   // *, / are LTR associative
   // ++, -- are RTL associative
+  // &&, || are RTL associative
 
   int result1 = a + b * c - d / e - f + g;
   cout << "Result: " << result1 << endl;
@@ -24,6 +29,15 @@ int main() {
 
   int result3 = (a + b) * c - d / e - f + g;
   cout << "Result: " << result3 << endl;
+
+  int result4 = h || i && j;
+  cout << "Result: " << result4 << endl;
+
+  int result5 = (h || i) && j;
+  cout << "Result: " << result5 << endl;
+
+  int result6 = h || (i && j);
+  cout << "Result: " << result6 << endl;
 
   return 0;
 }
